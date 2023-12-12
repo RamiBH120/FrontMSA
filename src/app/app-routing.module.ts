@@ -5,6 +5,9 @@ import { AddOffreComponent } from './components/offres/add-offre/add-offre.compo
 import { EditOffreComponent } from './components/offres/edit-offre/edit-offre.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ListReservationComponent } from './components/reservations/list-reservation/list-reservation.component';
+import { AddReservationComponent } from './components/reservations/add-reservation/add-reservation.component';
+import { EditReservationComponent } from './components/reservations/edit-reservation/edit-reservation.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home",pathMatch:"full"},
@@ -13,6 +16,10 @@ const routes: Routes = [
   { path: "offres", component:ListOffreComponent},
   { path: "offres/add", component:AddOffreComponent},
   { path: "offres/edit", component:EditOffreComponent},
+
+  { path: "reservations", component:ListReservationComponent},
+  { path: "reservations/add", component:AddReservationComponent},
+  { path: "reservations/edit/:id", component:EditReservationComponent},
   ]},
   { path: "**", component:NotfoundComponent}
 ];
