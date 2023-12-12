@@ -1,3 +1,4 @@
+<!--
 <h1>Angular con Keycloak</h1>
 
 		<button *ngIf="isLogged" type="button" (click)="closeSession()">Close Session</button>
@@ -27,4 +28,8 @@
 		      <td>{{ profile.emailVerified ? 'Si' : 'No' }}</td>
 		    </tr>
 		  </table>
+
 		</ng-container>
+		  <button type="button" routerLink="/home" class="">Go to home</button>
+	-->
+		  <router-outlet></router-outlet>

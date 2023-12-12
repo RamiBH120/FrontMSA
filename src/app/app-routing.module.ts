@@ -7,12 +7,14 @@ import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  { path: 'offres', component:ListOffreComponent},
-  { path: 'offres/add', component:AddOffreComponent},
-  { path: 'offres/edit', component:EditOffreComponent},
-  { path: '**', component:NotfoundComponent}
+  {path: "", redirectTo: "/home",pathMatch:"full"},
+  {path: "home", component: HomeComponent,children:[
+
+  { path: "offres", component:ListOffreComponent},
+  { path: "offres/add", component:AddOffreComponent},
+  { path: "offres/edit", component:EditOffreComponent},
+  ]},
+  { path: "**", component:NotfoundComponent}
 ];
 
 @NgModule({

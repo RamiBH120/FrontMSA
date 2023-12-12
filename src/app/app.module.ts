@@ -23,14 +23,18 @@ import { AddSiteComponent } from './components/sites/add-site/add-site.component
 import { ListSiteComponent } from './components/sites/list-site/list-site.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
         url: 'http://localhost:8180/auth',
-        realm: 'master',
-        clientId: 'app-angular'
+        realm: 'GatewayKeycloak',
+        clientId: 'gateway-service'
       },
       initOptions: {
         onLoad: 'check-sso',
@@ -62,20 +66,24 @@ function initializeKeycloak(keycloak: KeycloakService) {
     AddSiteComponent,
     ListSiteComponent,
     HomeComponent,
-    NotfoundComponent
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
-    {
+    /*{
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,
       multi: true,
       deps: [KeycloakService]
-    }
+    }*/
   ],
   bootstrap: [AppComponent]
 })

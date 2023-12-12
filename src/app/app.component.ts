@@ -15,13 +15,13 @@ export class AppComponent implements OnInit {
 
   public async ngOnInit() {
 
-    this.isLogged = await this.keycloak.isLoggedIn();
+    /*this.isLogged = await this.keycloak.isLoggedIn();
 
     type userRoles = Array<{id: number, text: string}>;
 
     if (this.isLogged) {
       this.profile = await this.keycloak.loadUserProfile();
-    }
+    }*/
   }
 
   public initSession() {
