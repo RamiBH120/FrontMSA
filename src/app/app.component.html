@@ -1,0 +1,35 @@
+<!--
+<h1>Angular con Keycloak</h1>
+
+		<button *ngIf="isLogged" type="button" (click)="closeSession()">Close Session</button>
+		<button *ngIf="!isLogged" type="button" (click)="initSession()">Init Session</button>
+
+		<ng-container *ngIf="profile">
+		  <h2>User Informations </h2>
+		  <table>
+		    <tr *ngIf="profile.username">
+		      <th scope="row">User</th>
+		      <td>{{ profile.username }}</td>
+		    </tr>
+		    <tr *ngIf="profile.firstName">
+		      <th scope="row">first name</th>
+		      <td>{{ profile.firstName }}</td>
+		    </tr>
+		    <tr *ngIf="profile.lastName">
+		      <th scope="row">last name</th>
+		      <td>{{ profile.lastName }}</td>
+		    </tr>
+		    <tr *ngIf="profile.email">
+		      <th scope="row">email</th>
+		      <td>{{ profile.email }}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">is email verified</th>
+		      <td>{{ profile.emailVerified ? 'Si' : 'No' }}</td>
+		    </tr>
+		  </table>
+
+		</ng-container>
+		  <button type="button" routerLink="/home" class="">Go to home</button>
+	-->
+		  <router-outlet></router-outlet>

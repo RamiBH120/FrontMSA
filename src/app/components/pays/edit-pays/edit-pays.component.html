@@ -1,0 +1,72 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Modifier une offre :</h4> <br>
+        <form [formGroup]="form" class="forms-sample" (ngSubmit)="edit()">
+          <div class="row">
+            <div class="col">
+                
+              <div class="form-group">
+                <label for="exampleInputnom">Nom</label>
+  
+                <input type="text" class="form-control" id="exampleInputnom" placeholder="nom" formControlName="nom">
+                <small *ngIf="form.get('nom')?.hasError('required') && form.get('nom')?.touched" class="text-danger">
+                  Le nom est requis. <br>
+                </small>
+                <small *ngIf="form.get('nom')?.hasError('minlength') && form.get('nom')?.touched" class="text-danger">
+                  Le nom doit contenir au moins 3 caractères.<br>
+                </small>
+                <small *ngIf="form.get('nom')?.hasError('pattern') && form.get('nom')?.touched" class="text-danger">
+                  Seuls les lettres et les espaces sont autorisés.<br>
+                </small>
+              </div>
+  
+  
+              <div class="form-group">
+                <label for="exampleInputprenom">description</label>
+                <input type="text" class="form-control" id="exampleInputprenom" placeholder="description"
+                       formControlName="description">
+                <small *ngIf="form.get('description')?.hasError('required') && form.get('description')?.touched"
+                       class="text-danger">
+                  La description est requis.<br>
+                </small>
+                <small *ngIf="form.get('description')?.hasError('minlength') && form.get('description')?.touched"
+                       class="text-danger">
+                  La description doit contenir au moins 3 caractères.<br>
+                </small>
+                <small *ngIf="form.get('description')?.hasError('pattern') && form.get('description')?.touched"
+                       class="text-danger">
+                  Seuls les lettres et les espaces sont autorisés.<br>
+                </small>
+              </div>
+  
+              <div class="form-group">
+                <label for="exampleInputprenom">ville</label>
+                <input type="text" class="form-control" id="exampleInputprenom" placeholder="description"
+                       formControlName="ville">
+                <small *ngIf="form.get('ville')?.hasError('required') && form.get('ville')?.touched"
+                       class="text-danger">
+                  La ville est requis.<br>
+                </small>
+                <small *ngIf="form.get('ville')?.hasError('minlength') && form.get('ville')?.touched"
+                       class="text-danger">
+                  La ville doit contenir au moins 3 caractères.<br>
+                </small>
+                <small *ngIf="form.get('ville')?.hasError('pattern') && form.get('ville')?.touched"
+                       class="text-danger">
+                  Seuls les lettres et les espaces sont autorisés.<br>
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+  
+  
+            <button type="submit" class="btn btn-primary mr-2 w-50" [disabled]="form.invalid">Modifier</button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>
+  

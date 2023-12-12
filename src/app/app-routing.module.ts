@@ -1,0 +1,32 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ListOffreComponent } from './components/offres/list-offre/list-offre.component';
+import { AddOffreComponent } from './components/offres/add-offre/add-offre.component';
+import { EditOffreComponent } from './components/offres/edit-offre/edit-offre.component';
+import { HomeComponent } from './components/home/home.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ListPaysComponent } from './components/pays/list-pays/list-pays.component';
+import { AddPaysComponent } from './components/pays/add-pays/add-pays.component';
+import { EditPaysComponent } from './components/pays/edit-pays/edit-pays.component';
+
+const routes: Routes = [
+  {path: "", redirectTo: "/home",pathMatch:"full"},
+  {path: "home", component: HomeComponent,children:[
+
+  { path: "ListePays", component:ListPaysComponent},
+  { path: "ListePays/addPays", component:AddPaysComponent},
+  { path: "ListePays/edit/:id", component:EditPaysComponent},
+
+
+  { path: "offres", component:ListOffreComponent},
+  { path: "offres/add", component:AddOffreComponent},
+  { path: "offres/edit", component:EditOffreComponent},
+  ]},
+  { path: "**", component:NotfoundComponent}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
