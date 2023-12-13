@@ -11,6 +11,10 @@ import { ListSiteComponent } from './components/sites/list-site/list-site.compon
 import { ListReservationComponent } from './components/reservations/list-reservation/list-reservation.component';
 import { AddReservationComponent } from './components/reservations/add-reservation/add-reservation.component';
 import { EditReservationComponent } from './components/reservations/edit-reservation/edit-reservation.component';
+import { ListPaysComponent } from './components/pays/list-pays/list-pays.component';
+import { AddPaysComponent } from './components/pays/add-pays/add-pays.component';
+import { EditPaysComponent } from './components/pays/edit-pays/edit-pays.component';
+
 
 const routes: Routes = [
   {path: "", redirectTo: "/home",pathMatch:"full"},
@@ -28,6 +32,10 @@ const routes: Routes = [
   { path: "reservations", component:ListReservationComponent},
   { path: "reservations/add", component:AddReservationComponent},
   { path: "reservations/edit/:id", component:EditReservationComponent},
+
+  { path: "ListePays", component:ListPaysComponent},
+  { path: "ListePays/addPays", component:AddPaysComponent},
+  { path: "ListePays/edit/:id", component:EditPaysComponent},
   ]},
   { path: "**", component:NotfoundComponent}
 ];
