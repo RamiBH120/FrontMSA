@@ -1,1 +1,69 @@
-<p>list-pays works!</p>
+<div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row justify-content-around">
+          <div class="col">
+          <button type="button" class="btn btn-success btn-rounded btn-fw" routerLink="addPays">Ajouter</button>
+  </div>
+  <div class="col">
+          <input [(ngModel)]="filter" class="form-control align-self-end mt-2" type="text" placeholder="rechercher par nom">
+                </div>
+        </div>
+        <h4 class="card-title">Liste des pays</h4>
+        <p class="card-description">
+  
+        </p>
+        <div class="table-responsive">
+          <table class="table table-striped display expandable-table">
+            <thead>
+            <tr>
+              <th>
+                Nom
+              </th>
+              <th>
+                Ville
+              </th>
+              <th>
+                Description
+              </th>
+  
+              <th>
+                Actions
+              </th>
+            </tr>
+            </thead>
+            <tbody *ngFor="let item of pays;let i=index">
+            <tr *ngIf="item.nom === filter || !filter">
+              <td>
+                {{item.nom}}
+              </td>
+              <td>
+                {{item.ville}}
+              </td>
+              <td>
+                {{item.description}}
+              </td>
+  
+  
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-rounded btn-icon"
+                (click)="goToUpdate(item.id)" >
+                  <i class="mdi mdi-pencil"></i>
+                </button>
+                <button type="button" class="btn btn-outline-danger btn-rounded btn-icon"
+                (click)="deleteOffre(item.id)">
+                  <i class="mdi mdi-delete"></i>
+                </button>
+              </td>
+            </tr>
+  
+  
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
