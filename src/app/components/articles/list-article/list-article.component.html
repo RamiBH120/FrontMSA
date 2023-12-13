@@ -1,1 +1,28 @@
-<p>list-article works!</p>
+<!-- list-article.component.html -->
+<div class="container">
+    <h2>Article List</h2>
+    <button (click)="navigateToAddForm()">Add Article</button>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let article of articles">
+          <td>{{ article.id }}</td>
+          <td>{{ article.title }}</td>
+          <td>{{ article.description }}</td>
+          <td>
+            <button (click)="navigateToEditForm(article.id)">Edit</button>
+            <button (click)="deleteArticle(article.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
