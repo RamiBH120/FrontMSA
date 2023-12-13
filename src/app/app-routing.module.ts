@@ -8,6 +8,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { EditSiteComponent } from './components/sites/edit-site/edit-site.component';
 import { AddSiteComponent } from './components/sites/add-site/add-site.component';
 import { ListSiteComponent } from './components/sites/list-site/list-site.component';
+import { ListReservationComponent } from './components/reservations/list-reservation/list-reservation.component';
+import { AddReservationComponent } from './components/reservations/add-reservation/add-reservation.component';
+import { EditReservationComponent } from './components/reservations/edit-reservation/edit-reservation.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home",pathMatch:"full"},
@@ -21,6 +24,10 @@ const routes: Routes = [
   { path: "sites/add", component:AddSiteComponent},
   { path: "sites/edit/:id", component:EditSiteComponent},
 
+
+  { path: "reservations", component:ListReservationComponent},
+  { path: "reservations/add", component:AddReservationComponent},
+  { path: "reservations/edit/:id", component:EditReservationComponent},
   ]},
   { path: "**", component:NotfoundComponent}
 ];
