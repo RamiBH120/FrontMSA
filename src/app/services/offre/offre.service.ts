@@ -7,7 +7,7 @@ import { Offre } from 'src/app/models/offre/offre';
   providedIn: 'root'
 })
 export class OffreService {
-  private url = 'http://localhost:8087/offre-services/api/offres';
+  private url = 'http://localhost:8282/api/offres';
 
   constructor(private http:HttpClient) { }
 

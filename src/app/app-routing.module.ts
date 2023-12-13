@@ -12,7 +12,7 @@ const routes: Routes = [
 
   { path: "offres", component:ListOffreComponent},
   { path: "offres/add", component:AddOffreComponent},
-  { path: "offres/edit", component:EditOffreComponent},
+  { path: "offres/edit/:id", component:EditOffreComponent},
   ]},
   { path: "**", component:NotfoundComponent}
 ];

@@ -34,7 +34,7 @@ export class AddOffreComponent {
     this.offreService.addOffre(this.form.getRawValue()).subscribe(() => {
       console.log()
       alert("Offre ajouté avec succès.")
-      this.router.navigate(['/front/offres'])
+      this.router.navigate(['/home/offres'])
     })
   }
 

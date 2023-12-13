@@ -24,8 +24,8 @@
   
               <div class="form-group">
                 <label for="exampleInputprenom">description</label>
-                <input type="text" class="form-control" id="exampleInputprenom" placeholder="description"
-                       formControlName="descriptionOffre">
+                <textarea type="text" class="form-control" id="exampleInputprenom" placeholder="description"
+                       formControlName="descriptionOffre"></textarea>
                 <small *ngIf="form.get('descriptionOffre')?.hasError('required') && form.get('descriptionOffre')?.touched"
                        class="text-danger">
                   La description est requis.<br>
